@@ -1,0 +1,12 @@
+{% extends 'aboutMe/layout.html' %}
+
+{% block title %}{{ projects.title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ projects.title }}</h1>
+        <p>Дата публикации: {{ projects.date }}</p>
+        <p>{{ projects.full_text }}</p>
+
+    </div>
+{% endblock %}

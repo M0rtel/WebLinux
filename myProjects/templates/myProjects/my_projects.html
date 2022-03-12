@@ -5,7 +5,19 @@
 {% block content %}
     <div class="features">
         <h1>Мои проекты</h1>
-        <p>Мои проекты</p>
-        <button class="btn btn-warning">Контакты</button>
+        {% if projects %}
+        {% for el in projects %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p> {{ el.anons }}</p>
+
+                <a href="{% url 'projects-detail' el.id %}" class="btn btn-warning">Подробнее</a> {# для того чтобы передать динамический параметр нужно указать id #}
+            </div>
+        {% endfor %}
+        {% else %}
+            <p>У вас нет проектов</p>
+        {% endif %}
+
+        <a href="{% url 'contacts' %}"><button class="btn btn-warning">Контакты</button></a>
     </div>
 {% endblock %}

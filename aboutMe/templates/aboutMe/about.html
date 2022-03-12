@@ -4,8 +4,9 @@
 
 {% block content %}
        <div class="features">
-        <h1>Обо мне</h1>
-        <p>Обо мне</p>
-        <button class="btn btn-warning">Мои проекты</button>
-    </div>
+            <h1>Обо мне</h1>
+            <p>Обо мне</p>
+
+            <a href="{% url 'my_projects' %}"><button class="btn btn-warning">Мои проекты</button></a>
+        </div>
 {% endblock %}
